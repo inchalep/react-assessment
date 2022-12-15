@@ -4,4 +4,8 @@ export const styles = {
     width: '94%',
     margin: '0 auto',
   },
+  'a.nav-active':{
+    color: '#e33c3c',
+    textDecoration: 'underline'
+  }
 };
