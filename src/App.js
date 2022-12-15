@@ -1,20 +1,19 @@
 import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  theme,
-} from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-
+import Login from './pages/login';
+import Clients from './pages/clients';
+import General from './pages/general';
+import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <ColorModeSwitcher/>
-      <Box>
-        <Text>Hello</Text>
-      </Box>
-    </ChakraProvider>
+    <>
+      <ColorModeSwitcher />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/clients" element={<Clients />} />
+        <Route path="/general" element={<General />} />
+      </Routes>
+    </>
   );
 }
 
