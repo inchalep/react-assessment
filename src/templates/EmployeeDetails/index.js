@@ -44,19 +44,19 @@ const EmployeeDetails = () => {
   };
 
   return (
-    <Box pt="45px" className="wrapper">
-      <Text pb="20px" color="red.400" fontWeight="bold" fontSize="35px">
+    <Box pt='45px' className='wrapper'>
+      <Text pb='20px' color='red.400' fontWeight='bold' fontSize='35px'>
         Employee Details
       </Text>
       {loader ? (
-        <Spinner color="green.500" />
+        <Spinner color='green.500' />
       ) : (
         <Box w={['100%','100%','45%']}>
           <Text pb='20px' fontSize='18px' fontWeight='bold' >ID: {id}</Text>
           <EmployeeForm
             formData={formData}
             setFormData={setFormData}
-            type="Save"
+            type='Save'
             id={id}
           />
         </Box>

@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import EmployeeForm from '../../../components/employeeForm';
+import EmployeeForm from '../../components/employeeForm';
 
 const RegisterEmployee = () => {
   const [formData, setFormData] = useState({
@@ -10,14 +10,14 @@ const RegisterEmployee = () => {
   });
 
   return (
-    <Box h="90vh">
-      <Box pt="45px" className="wrapper">
+    <Box h='90vh'>
+      <Box pt='45px' className='wrapper'>
         <Text
-          pb="20px"
-          fontSize="35px"
-          color="red.400"
-          fontWeight="bold"
-          textAlign="center"
+          pb='20px'
+          fontSize='35px'
+          color='red.400'
+          fontWeight='bold'
+          textAlign='center'
         >
           New Employee
         </Text>

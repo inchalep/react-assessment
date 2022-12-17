@@ -94,9 +94,9 @@ const EmployeeForm = ({ formData, setFormData, type, id }) => {
         <FormControl isInvalid={errs.employee_name}>
           <FormLabel>Employee Name:</FormLabel>
           <Input
-            name="employee_name"
+            name='employee_name'
             value={formData.employee_name}
-            type="text"
+            type='text'
             onChange={inputHandler}
           />
           <FormErrorMessage>{errs.employee_name}</FormErrorMessage>
@@ -104,9 +104,9 @@ const EmployeeForm = ({ formData, setFormData, type, id }) => {
         <FormControl isInvalid={errs.employee_salary}>
           <FormLabel>Employee salary:</FormLabel>
           <Input
-            name="employee_salary"
+            name='employee_salary'
             value={formData.employee_salary}
-            type="number"
+            type='number'
             onChange={inputHandler}
           />
           <FormErrorMessage>{errs.employee_salary}</FormErrorMessage>
@@ -114,14 +114,14 @@ const EmployeeForm = ({ formData, setFormData, type, id }) => {
         <FormControl isInvalid={errs.employee_age}>
           <FormLabel>Employee age:</FormLabel>
           <Input
-            name="employee_age"
+            name='employee_age'
             value={formData.employee_age}
-            type="number"
+            type='number'
             onChange={inputHandler}
           />
           <FormErrorMessage>{errs.employee_age}</FormErrorMessage>
         </FormControl>
-        <Button w="full" mt="20px" type="submit" colorScheme="teal">
+        <Button w='full' mt='20px' type='submit' colorScheme='teal'>
           {type}
         </Button>
       </form>
