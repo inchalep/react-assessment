@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import {
   Box,
-  Button,
-  Flex,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Input,
-  ListItem,
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEmployee } from '../../redux/slices/employee';
-import { Link } from 'react-router-dom';
+import EmployeeCard from '../../components/employeeCard';
 
 const Login = () => {
   const [allEmployees, setAllEmployees] = useState([]);
   const dispatch = useDispatch();
   const { employees } = useSelector(state => state.employee);
-  console.log(allEmployees, 'allEmployees');
 
   useEffect(() => {
     fetchData();
@@ -53,37 +45,8 @@ const Login = () => {
             className="emp_list"
           >
             {allEmployees?.map(employee => {
-              console.log(employee, 'employee');
               return (
-                <ListItem
-                  key={employee.id}
-                  boxShadow="none"
-                  border="1px"
-                  rounded="md"
-                  borderColor="blackAlpha.300"
-                  mb="20px"
-                  flexBasis={['100%', '100%', '49%', '24%']}
-                  _hover={{
-                    boxShadow: 'md',
-                  }}
-                >
-                  <Link to={`/home/employee/${employee.id}`}>
-                    <Box p="15px">
-                      <Flex>
-                        <Text fontWeight="bold" pr="5px">
-                          Employee ID :
-                        </Text>
-                        <Text>{employee.id}</Text>
-                      </Flex>
-                      <Flex>
-                        <Text fontWeight="bold" pr="5px">
-                          Name :
-                        </Text>
-                        <Text>{employee.employee_name}</Text>
-                      </Flex>
-                    </Box>
-                  </Link>
-                </ListItem>
+                <EmployeeCard employee={employee}/>
               );
             })}
           </UnorderedList>

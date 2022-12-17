@@ -8,7 +8,7 @@ import {
   Input,
   useToast,
 } from '@chakra-ui/react';
-import { _post } from '../../utils/api';
+import { _post, _put } from '../../utils/api';
 import { useDispatch } from 'react-redux';
 import { fetchEmployee } from '../../redux/slices/employee';
 import { useNavigate } from 'react-router-dom';
@@ -52,7 +52,11 @@ const EmployeeForm = ({ formData, setFormData, type, id }) => {
     const notValid = fieldValidation();
     if (Object.values(notValid).length <= 0) {
       try {
-        _post('create', formData);
+        if (id) {
+          _put(`update/${id}`, formData);
+        } else {
+          _post('create', formData);
+        }
         reset();
         dispatch(fetchEmployee());
         toast({
@@ -67,9 +71,7 @@ const EmployeeForm = ({ formData, setFormData, type, id }) => {
           position: 'top-right',
           isClosable: true,
         });
-        if (type == 'Register') {
-          navigate('/');
-        }
+        navigate('/');
       } catch (error) {
         toast({
           title: 'Employee',
