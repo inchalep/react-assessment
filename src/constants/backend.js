@@ -1,3 +1,3 @@
 export const variables = {
-  BACKEND_URL: '',
+  BACKEND_URL: 'https://dummy.restapiexample.com/public/api/v1/',
 };

@@ -10,12 +10,11 @@ import {
   Text,
 } from '@chakra-ui/react';
 
-const Login = () => {
+const EmployeeDetails = () => {
   const [formData, setFormData] = useState({
     usr: '',
     pwd: '',
   });
-
   const [errs, setErrs] = useState({});
 
   const fieldValidation = () => {
@@ -98,4 +97,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default EmployeeDetails;
