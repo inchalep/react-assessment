@@ -7,5 +7,5 @@ export const styles = {
   'a.nav-active':{
     color: '#e33c3c',
     textDecoration: 'underline'
-  }
+  },
 };
